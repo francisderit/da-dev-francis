@@ -32,7 +32,7 @@ export const useTodoStore = defineStore('todo', {
 
             axios.post('/api/todo', this.oTodoParams)
                 .then((oResponse) => {
-                    if (oResponse.data === false) {
+                    if (oResponse.data !== 1) {
                         alert('Error: Failed adding todo');
                         return;
                     }
@@ -48,7 +48,7 @@ export const useTodoStore = defineStore('todo', {
         completeTodo() {;
             axios.put('/api/todo/' + this.iSelectedTodo)
                 .then((oResponse) => {
-                    if (oResponse.data === false) {
+                    if (oResponse.data !== 1) {
                         alert('Error: Failed updating the selected todo');
                         return;
                     }
@@ -64,7 +64,7 @@ export const useTodoStore = defineStore('todo', {
         deleteTodo() {
             axios.delete('/api/todo/' + this.iSelectedTodo)
                 .then((oResponse) => {
-                    if (oResponse.data === false) {
+                    if (oResponse.data !== 1) {
                         alert('Error: Failed deleting the selected todo');
                         return;
                     }

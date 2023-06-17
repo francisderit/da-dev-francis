@@ -35,6 +35,13 @@ class Todo extends Model
     protected $fillable = TodoConstants::CREATE_ABLE_FIELDS;
 
     /**
+     * Casts fields
+     */
+    protected $casts = [
+        TodoConstants::COLUMN_IS_COMPLETED => 'boolean',
+    ];
+
+    /**
      * Timestamps
      * @var bool
      */

@@ -13,7 +13,7 @@
                 <tr v-for="(oTodo, iIndex) in oTodoStore.aTodoList">
                     <td>{{ iIndex + 1 }}</td>
                     <td>{{ oTodo.todo_description }}</td>
-                    <td v-if="oTodo.is_completed === 0">
+                    <td v-if="oTodo.is_completed === false">
                         <button type="button" class="btn btn-outline-success" @click="completeTodo(oTodo.todo_no)">Complete</button>
                         <button type="button" class="btn btn-outline-danger" @click="deleteTodo(oTodo.todo_no)">Delete</button>
                     </td>
