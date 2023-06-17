@@ -1,5 +1,6 @@
 <?php
 
+use App\Constants\TodoConstants;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,14 +14,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+        Schema::create(TodoConstants::TABLE_TODO, function (Blueprint $table) {
+            $table->id(TodoConstants::COLUMN_TODO_NO);
+            $table->string(TodoConstants::COLUMN_TODO_DESCRIPTION);
+            $table->boolean(TodoConstants::COLUMN_IS_COMPLETED)->default(false);
         });
     }
 
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists(TodoConstants::ENTITY);
     }
 };
