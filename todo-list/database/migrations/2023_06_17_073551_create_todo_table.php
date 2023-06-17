@@ -18,6 +18,8 @@ return new class extends Migration
             $table->id(TodoConstants::COLUMN_TODO_NO);
             $table->string(TodoConstants::COLUMN_TODO_DESCRIPTION);
             $table->boolean(TodoConstants::COLUMN_IS_COMPLETED)->default(false);
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
