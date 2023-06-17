@@ -60,6 +60,8 @@ Good luck and don't hesitate to reach out if you have any questions or need clar
 
 ****
 ## Setup
+- Create .env file and copy the contents of .env.example file
+
 Install all dependencies
 
 - Run `composer install`
@@ -72,6 +74,7 @@ Start the server
 
 Start MySQL in Apache and execute the migration file
 
+- Create database and name it `todo_list`
 - Run `php artisan migrate:fresh`
 
 Access the application
