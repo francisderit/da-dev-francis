@@ -19,4 +19,9 @@ class TodoConstants extends BaseConstants
     public const COLUMN_TODO_NO = 'todo_no';
     public const COLUMN_TODO_DESCRIPTION = 'todo_description';
     public const COLUMN_IS_COMPLETED = 'is_completed';
+
+    // FIELDS THAT CAN BE CREATED
+    public const CREATE_ABLE_FIELDS = [
+        self::COLUMN_TODO_DESCRIPTION
+    ];
 }

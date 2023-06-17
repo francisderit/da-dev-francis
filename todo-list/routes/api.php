@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Constants\TodoConstants;
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::controller(TodoController::class)->group(function() {
+    Route::get(TodoConstants::ENTITY, 'getTodo');
+    Route::post(TodoConstants::ENTITY, 'saveTodo');
+    Route::put(TodoConstants::ENTITY . '/{iTodoNo}', 'editTodo');
+    Route::delete(TodoConstants::ENTITY . '/{iTodoNo}', 'removeTodo');
 });
