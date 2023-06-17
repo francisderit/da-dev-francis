@@ -57,3 +57,23 @@ There are no design requirements for this task. You can install Tailwind or Boot
 - Use Laravel's APiResource for API responses
 ****
 Good luck and don't hesitate to reach out if you have any questions or need clarification on the scope or requirements.
+
+****
+## Setup
+Install all dependencies
+
+- Run `composer install`
+- Run `npm install`
+
+Start the server
+
+- Run `php artisan serve`
+- Run `npm run dev`
+
+Start MySQL in Apache and execute the migration file
+
+- Run `php artisan migrate:fresh`
+
+Access the application
+
+- Run in any browser `localhost:8000`
