@@ -8,7 +8,7 @@ namespace App\Constants;
  * @author Francis Derit
  * @since 06.17.23
  */
-class TodoConstants extends BaseConstants
+class TodoConstants
 {
     public const ENTITY = 'todo';
 

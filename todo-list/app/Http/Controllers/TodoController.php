@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 /**
  * @class TodoController
- * @package App\Http\Controllers
+ * @package App\Constants
  * @author Francis Derit
  * @since 06.17.23
  */
@@ -40,7 +40,7 @@ class TodoController extends Controller
     public function saveTodo(Request $oRequest): bool
     {
         $aParams = $oRequest->all();
-
+        
         $bValidateCreate = $this->oTodoRepository->createTodo($aParams);
         
         return $bValidateCreate;

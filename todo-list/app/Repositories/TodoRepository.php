@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Repositories;
+
 use App\Constants\TodoConstants;
 use App\Interfaces\TodoRepositoryInterface;
 use App\Models\Todo;
@@ -18,9 +19,7 @@ class TodoRepository implements TodoRepositoryInterface
      */
     public function fetchTodo()
     {
-        return Todo::all()
-            ->sortByDesc(TodoConstants::COLUMN_TODO_NO)
-            ->toArray();
+        return Todo::all()->toArray();
     }
 
     /**
@@ -28,7 +27,7 @@ class TodoRepository implements TodoRepositoryInterface
      */
     public function createTodo(array $aParams)
     {
-        return Todo::insertGetId($aParams);
+        return Todo::insert($aParams);
     }
 
     /**

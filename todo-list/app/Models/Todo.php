@@ -33,4 +33,10 @@ class Todo extends Model
      * @var string[]
      */
     protected $fillable = TodoConstants::CREATE_ABLE_FIELDS;
+
+    /**
+     * Timestamps
+     * @var bool
+     */
+    public $timestamps = false;
 }
