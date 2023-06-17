@@ -41,9 +41,9 @@ class TodoController extends Controller
     {
         $aParams = $oRequest->all();
         
-        $bValidateCreate = $this->oTodoRepository->createTodo($aParams);
+        $bSaveResult = $this->oTodoRepository->createTodo($aParams);
         
-        return $bValidateCreate;
+        return $bSaveResult;
     }
 
     /**
@@ -51,11 +51,11 @@ class TodoController extends Controller
      */
     public function editTodo(Request $oRequest, int $iTodoNo): bool
     {
-        $bValidateUpdate = $this->oTodoRepository->updateTodo($iTodoNo, [
+        $bUpdateResult = $this->oTodoRepository->updateTodo($iTodoNo, [
             TodoConstants::COLUMN_IS_COMPLETED => true
         ]);
 
-        return $bValidateUpdate;
+        return $bUpdateResult;
     }
 
     /**
@@ -63,8 +63,8 @@ class TodoController extends Controller
      */
     public function removeTodo(Request $oRequest, int $iTodoNo)
     {
-        $bValidateDelete = $this->oTodoRepository->deleteTodo($iTodoNo);
+        $bDeleteResult = $this->oTodoRepository->deleteTodo($iTodoNo);
 
-        return $bValidateDelete;
+        return $bDeleteResult;
     }
 }
